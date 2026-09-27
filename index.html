@@ -23,7 +23,7 @@ canvas{display:block;}
 #hitmarker{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(1.4);
   color:#ff4444;font-size:38px;font-weight:bold;opacity:0;text-shadow:0 0 10px #000,0 0 4px #fff;
   transition:opacity .08s;line-height:1;}
-#hitmarker.head{color:#ffdd44;font-size:52px;text-shadow:0 0 15px #ff8800,0 0 6px #fff;}
+#hitmarker.head{color:#ffdd44;font-size:52px;}
 #screenFlash{position:absolute;inset:0;pointer-events:none;opacity:0;
   background:radial-gradient(circle at center,rgba(255,255,255,.55),transparent 60%);
   transition:opacity .08s;}
@@ -33,8 +33,7 @@ canvas{display:block;}
   padding:6px 18px;border-radius:8px;backdrop-filter:blur(8px);}
 .stat{display:flex;flex-direction:column;align-items:center;min-width:56px;}
 .stat .label{font-size:9px;letter-spacing:2px;color:#c99a6a;font-weight:600;}
-.stat .val{font-size:18px;font-weight:700;color:#ffe4b8;
-  text-shadow:0 0 10px rgba(255,180,80,.6);font-variant-numeric:tabular-nums;}
+.stat .val{font-size:18px;font-weight:700;color:#ffe4b8;font-variant-numeric:tabular-nums;}
 #mpTag{position:absolute;top:calc(56px + env(safe-area-inset-top));left:50%;
   transform:translateX(-50%);background:rgba(30,60,90,.75);
   padding:4px 16px;border-radius:14px;font-size:11px;color:#a8e0ff;
@@ -52,16 +51,15 @@ canvas{display:block;}
   border-radius:6px;padding:4px;display:none;}
 #bossBar.on{display:block;}
 #bossBar .name{font-size:11px;color:#ff8080;letter-spacing:3px;font-weight:800;
-  text-align:center;margin-bottom:3px;text-shadow:0 0 10px rgba(255,60,60,.8);}
+  text-align:center;margin-bottom:3px;}
 #bossFill{height:14px;width:100%;background:linear-gradient(90deg,#8b0000,#ff3030,#ff8080);
-  border-radius:3px;transition:width .2s;box-shadow:0 0 14px rgba(255,60,60,.7);}
+  border-radius:3px;transition:width .2s;}
 #healthWrap{position:absolute;left:20px;bottom:calc(20px + env(safe-area-inset-bottom));
   width:200px;}
 #healthBar{width:100%;height:18px;background:rgba(0,0,0,.65);
   border:1px solid rgba(255,180,100,.3);border-radius:4px;overflow:hidden;}
 #healthFill{height:100%;width:100%;
-  background:linear-gradient(90deg,#e74c3c,#ff8a7a);
-  transition:width .18s;box-shadow:0 0 14px rgba(255,80,80,.5);}
+  background:linear-gradient(90deg,#e74c3c,#ff8a7a);transition:width .18s;}
 #armorBar{width:100%;height:8px;margin-top:3px;background:rgba(0,0,0,.65);
   border-radius:3px;overflow:hidden;display:none;}
 #armorBar.on{display:block;}
@@ -73,9 +71,9 @@ canvas{display:block;}
 #staminaWrap.on{opacity:1;}
 #staminaBar{width:100%;height:7px;background:rgba(0,0,0,.6);
   border-radius:3px;overflow:hidden;}
-#staminaFill{height:100%;width:100%;background:#f0c040;transition:width .1s;}
+#staminaFill{height:100%;width:100%;background:#f0c040;}
 #ammo{position:absolute;right:20px;bottom:calc(180px + env(safe-area-inset-bottom));
-  text-align:right;color:#e8e8e8;text-shadow:0 0 10px rgba(0,0,0,.9);}
+  text-align:right;color:#e8e8e8;}
 #weaponName{font-size:12px;color:#c99a6a;letter-spacing:3px;font-weight:600;}
 #weaponStars{font-size:11px;color:#ffd97a;margin-top:2px;height:14px;letter-spacing:2px;}
 #ammoMag{font-size:42px;font-weight:800;color:#ffd97a;line-height:1;
@@ -115,30 +113,28 @@ canvas{display:block;}
   background:red;transform:translate(-50%,-50%);box-shadow:0 0 8px red;border-radius:50%;}
 #killFeed{position:absolute;top:calc(160px + env(safe-area-inset-top));right:20px;
   display:flex;flex-direction:column;gap:4px;align-items:flex-end;
-  font-size:12px;font-weight:700;letter-spacing:1px;pointer-events:none;}
+  font-size:12px;font-weight:700;pointer-events:none;}
 .kfEntry{background:rgba(0,0,0,.55);padding:4px 10px;border-radius:6px;
   color:#e8e8e8;border-left:3px solid #ff6644;
   animation: kfFade 4s forwards;}
 @keyframes kfFade{0%{opacity:0;transform:translateX(20px);}10%{opacity:1;transform:translateX(0);}
   80%{opacity:1;}100%{opacity:0;transform:translateX(20px);}}
 .kfEntry.me{border-left-color:#ffdd44;}
-.kfEntry.kill{border-left-color:#ff5555;}
 #mobileUI{position:fixed;inset:0;z-index:20;display:none;pointer-events:none;}
 #mobileUI.on{display:block;}
 #joyBase{position:absolute;left:30px;bottom:calc(40px + env(safe-area-inset-bottom));
   width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.06);
-  border:2px solid rgba(255,180,100,.4);pointer-events:auto;touch-action:none;
-  box-shadow:inset 0 0 24px rgba(0,0,0,.5);}
+  border:2px solid rgba(255,180,100,.4);pointer-events:auto;touch-action:none;}
 #joyKnob{position:absolute;left:50%;top:50%;width:62px;height:62px;
   margin:-31px 0 0 -31px;border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#ffdcae,#c8843c);
-  box-shadow:0 0 16px rgba(255,180,80,.7);transition:transform .05s;}
+  transition:transform .05s;}
 #fireBtn{position:absolute;right:30px;bottom:calc(50px + env(safe-area-inset-bottom));
   width:110px;height:110px;border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#ff8080,#8b1c1c);
   border:3px solid rgba(255,200,200,.55);color:#fff;font-size:40px;display:flex;
   align-items:center;justify-content:center;pointer-events:auto;touch-action:none;
-  box-shadow:0 0 26px rgba(255,60,60,.7);font-weight:800;}
+  font-weight:800;}
 #fireBtn:active{transform:scale(.94);}
 #reloadBtn{position:absolute;right:calc(30px + 118px);
   bottom:calc(70px + env(safe-area-inset-bottom));width:72px;height:72px;
@@ -169,7 +165,7 @@ canvas{display:block;}
 .overlay h1 span{display:block;font-size:.42em;letter-spacing:10px;color:#ff5555;
   text-shadow:0 0 24px rgba(255,60,60,.8);margin-top:6px;}
 .overlay h2{font-size:clamp(28px,8vw,56px);font-weight:900;letter-spacing:4px;
-  color:#ff5555;text-shadow:0 0 30px rgba(255,60,60,.7);}
+  color:#ff5555;}
 .overlay h3{font-size:16px;color:#ffd97a;letter-spacing:2px;margin-top:14px;font-weight:800;}
 .overlay p{color:#c8a680;font-size:14px;line-height:1.7;margin-top:14px;max-width:520px;}
 .keys{display:grid;grid-template-columns:auto auto;gap:8px 16px;margin-top:20px;
@@ -188,7 +184,7 @@ button.secondary{background:linear-gradient(180deg,#a8d0ff,#4a8ec8);color:#0a1a2
 button.small{padding:10px 24px;font-size:13px;}
 .menuRow{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:center;
   margin-top:10px;}
-input[type="text"], input[type="number"]{
+input[type="text"]{
   background:rgba(0,0,0,.5);border:2px solid rgba(255,180,100,.4);
   color:#ffe4b8;padding:11px 16px;border-radius:8px;font-size:15px;
   font-family:inherit;text-align:center;letter-spacing:2px;font-weight:700;
@@ -202,9 +198,7 @@ label{display:block;color:#c8a680;font-size:12px;letter-spacing:1px;
 #shopScreen .shopGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:10px;max-width:760px;width:100%;margin-top:16px;}
 .shopItem{background:rgba(40,25,15,.9);border:2px solid rgba(255,180,100,.35);
-  border-radius:10px;padding:12px;cursor:pointer;transition:transform .1s,border-color .2s;
-  text-align:center;touch-action:manipulation;}
-.shopItem:hover{border-color:#ffd97a;transform:translateY(-2px);}
+  border-radius:10px;padding:12px;cursor:pointer;text-align:center;touch-action:manipulation;}
 .shopItem.disabled{opacity:.4;pointer-events:none;}
 .shopItem .si-name{font-size:13px;font-weight:800;color:#ffd97a;}
 .shopItem .si-desc{font-size:11px;color:#c8a680;margin-top:5px;line-height:1.5;}
@@ -217,16 +211,14 @@ label{display:block;color:#c8a680;font-size:12px;letter-spacing:1px;
 #achvToast{position:fixed;top:calc(80px + env(safe-area-inset-top));right:-360px;
   z-index:60;background:linear-gradient(135deg,rgba(255,180,80,.95),rgba(200,120,40,.95));
   color:#2a0e00;padding:14px 22px;border-radius:10px;font-weight:800;font-size:13px;
-  box-shadow:0 0 30px rgba(255,180,80,.7);transition:right .5s;max-width:300px;}
+  transition:right .5s;max-width:300px;}
 #achvToast.on{right:18px;}
 #perkCards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
   max-width:700px;width:100%;margin-top:22px;}
 .perkCard{background:linear-gradient(180deg,rgba(60,30,15,.95),rgba(30,15,8,.95));
   border:3px solid rgba(255,180,100,.5);border-radius:12px;padding:20px 14px;
-  cursor:pointer;transition:transform .15s,border-color .2s;text-align:center;
-  touch-action:manipulation;min-height:160px;
+  cursor:pointer;text-align:center;touch-action:manipulation;min-height:160px;
   display:flex;flex-direction:column;justify-content:center;align-items:center;}
-.perkCard:hover{border-color:#ffd97a;transform:translateY(-4px) scale(1.02);}
 .perkCard .pc-icon{font-size:40px;margin-bottom:10px;}
 .perkCard .pc-name{font-size:15px;font-weight:800;color:#ffd97a;}
 .perkCard .pc-desc{font-size:12px;color:#c8a680;margin-top:8px;line-height:1.5;}
@@ -234,15 +226,14 @@ label{display:block;color:#c8a680;font-size:12px;letter-spacing:1px;
   overflow-y:auto;width:100%;max-width:400px;}
 .plItem{background:rgba(40,25,15,.7);border:1px solid rgba(255,180,100,.3);
   padding:8px 14px;border-radius:8px;color:#ffe4b8;font-size:13px;font-weight:700;
-  letter-spacing:1px;display:flex;justify-content:space-between;align-items:center;}
+  display:flex;justify-content:space-between;align-items:center;}
 .plItem .hp{color:#8fd95a;font-size:11px;}
 .plItem.self{border-color:#ffd97a;background:rgba(80,50,20,.8);}
 .plItem .you{color:#ffd97a;font-size:10px;margin-left:6px;}
 #lobbyInfo{color:#8fb8a0;font-size:12px;margin-top:10px;letter-spacing:1px;}
 #roomCodeBox{background:rgba(0,0,0,.5);border:2px dashed rgba(255,180,100,.5);
   padding:14px 24px;border-radius:10px;margin-top:14px;font-family:monospace;
-  font-size:24px;color:#ffd97a;font-weight:900;letter-spacing:6px;
-  min-width:200px;}
+  font-size:24px;color:#ffd97a;font-weight:900;letter-spacing:6px;min-width:200px;}
 </style>
 </head>
 <body>
@@ -289,7 +280,6 @@ label{display:block;color:#c8a680;font-size:12px;letter-spacing:1px;
   <div id="crouchBtn">CROUCH</div>
 </div>
 
-<!-- START MENU -->
 <div class="overlay" id="startScreen">
   <h1>ZOMBIE<span>SURVIVAL</span></h1>
   <p>Dark dusk, rising horde — เล่นคนเดียว หรือชวนเพื่อนมา CO-OP</p>
@@ -300,9 +290,8 @@ label{display:block;color:#c8a680;font-size:12px;letter-spacing:1px;
   <div id="best" style="color:#8fb8a0;font-size:12px;margin-top:18px;">HIGH SCORE: 0</div>
 </div>
 
-<!-- LOBBY -->
 <div class="overlay hidden" id="lobbyScreen">
-  <h2 style="color:#a8e0ff;text-shadow:0 0 30px rgba(120,200,255,.7);">MULTIPLAYER</h2>
+  <h2 style="color:#a8e0ff;">MULTIPLAYER</h2>
   <p>แชร์รหัสห้องให้เพื่อน → ทุกคนกด Start</p>
   <div class="menuRow" style="margin-top:16px;">
     <div class="fieldWrap">
@@ -337,12 +326,12 @@ label{display:block;color:#c8a680;font-size:12px;letter-spacing:1px;
   <button id="quitBtn" class="secondary small" style="margin-top:12px;">ออกเกม</button>
 </div>
 <div class="overlay hidden" id="perkScreen">
-  <h2 style="color:#ffd97a;text-shadow:0 0 30px rgba(255,180,80,.7);">เลือก PERK</h2>
+  <h2 style="color:#ffd97a;">เลือก PERK</h2>
   <p>เลือก 1 อย่างจาก 3 การ์ด — มีผลถาวรจนจบเกม</p>
   <div id="perkCards"></div>
 </div>
 <div class="overlay hidden" id="shopScreen">
-  <h2 style="color:#ffd97a;text-shadow:0 0 30px rgba(255,180,80,.7);">SHOP</h2>
+  <h2 style="color:#ffd97a;">SHOP</h2>
   <p>ใช้ score เป็นเงิน — กด "WAVE ถัดไป" เมื่อพร้อม</p>
   <div id="shopCoins">🪙 0</div>
   <div class="shopGrid" id="shopGrid"></div>
@@ -365,28 +354,10 @@ label{display:block;color:#c8a680;font-size:12px;letter-spacing:1px;
 <div id="achvToast"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-<script>
+<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script><script>
 /* ============================================================
-   PART 1/3 — CONFIG + AUDIO + TEXTURES + GLOBALS + MODELS + INIT
+   PART 2/4 — CONFIG + AUDIO + TEXTURES + MODELS + INIT
    ============================================================ */
-
-/* ---------- FIREBASE CONFIG ----------
-   ⚠️ ใส่ config ของคุณเองด้านล่าง
-   วิธี: ไปที่ console.firebase.google.com → สร้าง project ฟรี
-   → เพิ่ม Realtime Database (โหมดทดสอบ) → คัดลอก config มาแทน
-----------------------------------------*/
-const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyDEMO-REPLACE-WITH-YOURS",
-  authDomain: "zombie-survival-demo.firebaseapp.com",
-  databaseURL: "https://zombie-survival-demo-default-rtdb.firebaseio.com",
-  projectId: "zombie-survival-demo",
-  storageBucket: "zombie-survival-demo.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:0000000000000000000000"
-};
-
 const IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
   || ('ontouchstart' in window && innerWidth < 1200);
 
@@ -476,11 +447,9 @@ const sfx = {
   alert:  () => tone(420,260,0.22,0.18,'square'),
   throwG: () => tone(420,320,0.15,0.15,'triangle'),
   explode:() => { noise(0.7,900,0.65,2); tone(80,25,0.5,0.5); },
-  levelup:() => { tone(660,990,0.12,0.22); tone(880,1320,0.12,0.20,'sine',0.08);
-                  tone(1100,1650,0.16,0.18,'sine',0.16); },
+  levelup:() => { tone(660,990,0.12,0.22); tone(880,1320,0.12,0.20,'sine',0.08); },
   thunder:() => { noise(1.2,600,0.55,1.5,60); tone(50,20,1.0,0.35,'sine',0.1); },
   heartbeat: () => { tone(80,40,0.12,0.28,'sine'); tone(70,35,0.14,0.22,'sine',0.16); },
-  join: () => { tone(660,990,0.10,0.20); tone(880,1320,0.12,0.16,'sine',0.08); },
   bossRoar: () => {
     if (!actx) return;
     try {
@@ -637,8 +606,7 @@ const state = {
   boss:null, bossActive:false, bossKilled:0,
   perkCardPending:false,
   mode: 'solo',
-  remotePlayers: {},
-  netDirty: false
+  remotePlayers: {}
 };
 
 const touch = {
@@ -670,15 +638,12 @@ const PERK_CARDS = [
   { id:'thorns',   icon:'⚔️', name:'THORNS',         desc:'ซอมบี้ตีเรา รับ 15 dmg', apply:()=>{ player.perks.thorns = true; } }
 ];
 
-// ============================================================
-//  GUN MODELS
-// ============================================================
+// ---------- GUN MODELS ----------
 function buildPlayerGun() {
   gunGroup = new THREE.Group();
   camera.add(gunGroup);
   rebuildGunModel('pistol');
 }
-
 function rebuildGunModel(type) {
   while (gunGroup.children.length) gunGroup.remove(gunGroup.children[0]);
   const steelMat = new THREE.MeshStandardMaterial({ color:0x3a3e44, roughness:0.4, metalness:0.95 });
@@ -851,9 +816,7 @@ function rebuildGunModel(type) {
   gunGroup.userData.base = basePos.clone();
 }
 
-// ============================================================
-//  ZOMBIE MODEL
-// ============================================================
+// ---------- ZOMBIE MODEL ----------
 const ZPARTS = {};
 function initZombieGeometries() {
   ZPARTS.headCore   = new THREE.BoxGeometry(0.30, 0.32, 0.30);
@@ -880,7 +843,6 @@ function initZombieGeometries() {
   ZPARTS.shoulder   = new THREE.BoxGeometry(0.20, 0.20, 0.20);
   ZPARTS.pants      = new THREE.BoxGeometry(0.22, 0.22, 0.78);
 }
-
 let zombieSkinCache = {};
 function getZombieSkin(variant) {
   if (!zombieSkinCache[variant]) {
@@ -890,7 +852,6 @@ function getZombieSkin(variant) {
   }
   return zombieSkinCache[variant];
 }
-
 function buildZombieBody(g, variant, def) {
   const skinMat = getZombieSkin(variant);
   const clothColors = {
@@ -905,7 +866,6 @@ function buildZombieBody(g, variant, def) {
                  : 0xff4422;
   const eyeMat = new THREE.MeshBasicMaterial({ color: eyeColor });
   const teethMat = new THREE.MeshStandardMaterial({ color: 0xdbc088, roughness: 0.7 });
-
   const isCrawler = variant === 'crawler';
   const legScale = isCrawler ? 0.55 : 1.0;
 
@@ -1117,6 +1077,7 @@ function init() {
   bindTouchControls();
   if (IS_MOBILE) document.getElementById('mobileUI').classList.add('on');
   updateHUD();
+  animate();
 }
 
 function buildEnvironment() {
@@ -1246,7 +1207,7 @@ function buildRain() {
 }
 </script><script>
 /* ============================================================
-   PART 2/3 — PLAYER + SHOOTING (FIXED) + ZOMBIES + COMBAT FX
+   PART 3/4 — PLAYER + SHOOTING + ZOMBIES + COMBAT FX
    ============================================================ */
 
 function updatePlayer(dt) {
@@ -1463,7 +1424,7 @@ function toggleScope(force) {
 }
 
 // ============================================================
-//  SHOOTING — FIXED! Raycaster finds zombies properly
+//  SHOOTING — FIXED! Raycaster targets individual zombie meshes
 // ============================================================
 const _v1 = new THREE.Vector3(), _v2 = new THREE.Vector3(), _v3 = new THREE.Vector3();
 
@@ -1479,12 +1440,11 @@ function getWeaponStats(type) {
   return { dmg, fireRate, reloadTime, mag };
 }
 
-// Collect all zombie meshes for raycasting (FIX for hit detection)
+// FIX: Collect all zombie meshes for raycasting with recursive traversal
 function getZombieTargets() {
   const targets = [];
   for (const z of state.zombies) {
     if (z.dead) continue;
-    // Traverse and collect all meshes with userData.part set
     z.group.traverse(o => {
       if (o.isMesh && o.userData.part) {
         o.userData.__zombie = z;
@@ -1495,11 +1455,12 @@ function getZombieTargets() {
   return targets;
 }
 
+// FIX: Find zombie from any hit object by walking up parents
 function findZombieFromObject(obj) {
   let o = obj;
   while (o) {
-    if (o.userData && o.userData.zombie && !o.userData.zombie.dead) return o.userData.zombie;
     if (o.userData && o.userData.__zombie && !o.userData.__zombie.dead) return o.userData.__zombie;
+    if (o.userData && o.userData.zombie && !o.userData.zombie.dead) return o.userData.zombie;
     o = o.parent;
   }
   return null;
@@ -1537,7 +1498,7 @@ function tryShoot() {
 
   const weatherSpread = state.weather === 'storm' ? 3.0 : (state.weather === 'rain' ? 1.5 : 1.0);
 
-  // Build target list ONCE per shot
+  // Build target list ONCE per shot — zombie body meshes + obstacles
   const zombieTargets = getZombieTargets();
   const allTargets = [...zombieTargets, ...state.obstacleMeshes];
 
@@ -1551,6 +1512,7 @@ function tryShoot() {
     raycaster.set(origin, pdir);
     raycaster.far = w.range;
 
+    // FIX: recursive=false because we collected individual meshes
     const hits = raycaster.intersectObjects(allTargets, false);
 
     if (hits.length) {
@@ -1571,7 +1533,6 @@ function tryShoot() {
         if (player.perks.explosive && Math.random() < 0.15) {
           explodeAt(h.point.clone(), 2.5, 60);
         }
-        // Piercing continues through to next target
         if (player.perks.pierce && w.pellets === 1) {
           const newOrigin = h.point.clone().addScaledVector(pdir, 0.3);
           raycaster.set(newOrigin, pdir);
@@ -1587,7 +1548,7 @@ function tryShoot() {
           }
         }
       } else {
-        // Hit obstacle/world
+        // Hit obstacle
         spawnSparks(h.point.clone(), h.face ? h.face.normal.clone() : pdir.clone().negate(), 10);
         spawnDecal(h.point.clone(), 0.25);
         hitList.push(h.point.clone());
@@ -1604,8 +1565,8 @@ function tryShoot() {
   spawnCasing();
   updateHUDWeapon();
 
-  // Broadcast shot event (multiplayer)
-  if (state.mode === 'mp' && MP.connected) {
+  // MP broadcast
+  if (state.mode === 'mp' && typeof MP !== 'undefined' && MP.connected) {
     MP.broadcastShot(muzzleWorld.clone(), tracerEnd);
   }
 }
@@ -1747,9 +1708,7 @@ const ZTYPES = {
   screamer:{ hp:0.8, speed:0.9, damage:0.5, scale:1.0,  score:200, minWave:5, screamer:true }
 };
 
-let netZombieIdCounter = 1;
-
-function createZombie(x, z, forcedType, netId) {
+function createZombie(x, z, forcedType) {
   const wave = state.wave;
   let type = forcedType;
   if (!type) {
@@ -1782,11 +1741,9 @@ function createZombie(x, z, forcedType, netId) {
     target: new THREE.Vector3(x, 0, z),
     lastSeenPlayer: -999,
     crawler: !!def.crawler, spitter: !!def.spitter, screamer: !!def.screamer,
-    isBoss: false,
-    netId: netId || ('local_' + (netZombieIdCounter++))
+    isBoss: false
   };
   g.userData.zombie = zombie;
-  // Set __zombie on all meshes for faster raycasting lookup
   g.traverse(o => {
     o.userData.zombie = zombie;
     if (o.isMesh) o.userData.__zombie = zombie;
@@ -2187,13 +2144,8 @@ function damageZombie(z, dmg, point, isHead, weaponSound, hitPart) {
     maybeDropPickup(z.group.position);
     checkAchievements();
     if (isHead && state.kills % 5 === 0 && !z.isBoss) triggerKillcam(0.7);
-    // Kill feed for MP
     if (state.mode === 'mp') {
       addKillFeed(player.name + ' 🎯 ' + (z.isBoss ? 'BOSS' : z.type.toUpperCase()), 'me');
-    }
-    // Broadcast kill to MP
-    if (state.mode === 'mp' && MP.connected) {
-      MP.broadcastZombieKilled(z.netId, player.name);
     }
   }
 }
@@ -2518,39 +2470,26 @@ function addKillFeed(text, type) {
 }
 </script><script>
 /* ============================================================
-   PART 3/3 — HUD + WAVES + MULTIPLAYER + INPUT + LOOP
+   PART 4/4 — HUD + WAVES + SHOP + PEERJS MULTIPLAYER + LOOP
    ============================================================ */
 
 // ============================================================
-//  MULTIPLAYER (Firebase Realtime DB)
+//  MULTIPLAYER (PeerJS) — Host-Client
 // ============================================================
 const MP = {
-  db: null,
-  roomRef: null,
-  myRef: null,
+  peer: null,
+  conn: null,           // For client: connection to host
+  hostConn: null,       // For host: connection to client (single)
   connected: false,
   roomCode: null,
   isHost: false,
-  players: {},
+  myPeerId: null,
+  remotePlayers: {},    // id -> mesh
   lastSend: 0,
-  listeners: [],
-  remoteMeshes: {}
+  onOpen: null,
+  onData: null,
+  onClose: null
 };
-
-function initFirebase() {
-  if (typeof firebase === 'undefined') {
-    console.warn('Firebase not loaded');
-    return false;
-  }
-  try {
-    if (!firebase.apps.length) firebase.initializeApp(FIREBASE_CONFIG);
-    MP.db = firebase.database();
-    return true;
-  } catch(e) {
-    console.error('Firebase init error:', e);
-    return false;
-  }
-}
 
 function genRoomCode() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -2561,10 +2500,7 @@ function genRoomCode() {
 
 function setLobbyStatus(text, color) {
   const el = document.getElementById('lobbyStatus');
-  if (el) {
-    el.textContent = text;
-    el.style.color = color || '#c8a680';
-  }
+  if (el) { el.textContent = text; el.style.color = color || '#c8a680'; }
 }
 
 function updateMpTag(status) {
@@ -2585,338 +2521,300 @@ function updateMpTag(status) {
   }
 }
 
-async function createRoom() {
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function createPeer(id, callback) {
+  if (typeof Peer === 'undefined') {
+    setLobbyStatus('❌ PeerJS โหลดไม่สำเร็จ', '#ff8888');
+    return null;
+  }
+  const p = new Peer(id, { debug: 0 });
+  p.on('open', pid => { MP.myPeerId = pid; callback && callback(pid); });
+  p.on('error', err => {
+    console.error('Peer error:', err);
+    setLobbyStatus('❌ ' + (err.type || err.message || 'Connection error'), '#ff8888');
+    updateMpTag('error');
+  });
+  return p;
+}
+
+function createRoom() {
   const nameInput = document.getElementById('playerName');
   const name = (nameInput.value || '').trim() || 'PLAYER';
   player.name = name;
-  try { localStorage.setItem('zs_name', name); } catch(e) {}
+  try { localStorage.setItem('zs_name', name); } catch(e){}
 
-  if (!initFirebase()) {
-    setLobbyStatus('❌ Firebase ไม่พร้อม — ตรวจสอบ config', '#ff8888');
-    return;
-  }
+  const code = genRoomCode();
+  MP.roomCode = code;
+  MP.isHost = true;
+  MP.peerIdWanted = 'zombie-3d-' + code;
+
   setLobbyStatus('⏳ กำลังสร้างห้อง...', '#ffcc88');
+  updateMpTag('connecting');
 
-  try {
-    let code, exists = true, tries = 0;
-    while (exists && tries < 8) {
-      tries++;
-      code = genRoomCode();
-      const snap = await MP.db.ref('rooms/' + code).once('value');
-      exists = snap.exists();
-    }
-    if (exists) { setLobbyStatus('❌ สร้างห้องไม่ได้ ลองใหม่', '#ff8888'); return; }
+  // Cleanup old peer
+  if (MP.peer) { try { MP.peer.destroy(); } catch(e){} MP.peer = null; }
 
-    MP.roomCode = code;
-    MP.isHost = true;
-    MP.roomRef = MP.db.ref('rooms/' + code);
-    MP.myRef = MP.roomRef.child('players/' + player.id);
-
-    await MP.roomRef.set({
-      createdAt: firebase.database.ServerValue.TIMESTAMP,
-      hostId: player.id,
-      wave: 1,
-      seed: Math.floor(Math.random()*100000)
-    });
-
-    await MP.myRef.set({
-      name: player.name,
-      x: 0, z: 0, yaw: 0, hp: 100,
-      weapon: 'pistol',
-      score: 0,
-      joinedAt: firebase.database.ServerValue.TIMESTAMP,
-      lastSeen: firebase.database.ServerValue.TIMESTAMP
-    });
-    await MP.myRef.onDisconnect().remove();
-
+  MP.peer = createPeer(MP.peerIdWanted, (id) => {
     MP.connected = true;
-    state.mode = 'mp';
     updateMpTag('connected');
-
     const codeBox = document.getElementById('roomCodeBox');
     codeBox.textContent = code;
     codeBox.style.display = 'block';
-    setLobbyStatus('✅ สร้างห้องสำเร็จ! แชร์รหัสให้เพื่อน', '#88ff88');
+    setLobbyStatus('✅ สร้างห้องสำเร็จ! แชร์รหัส ' + code + ' ให้เพื่อน', '#88ff88');
+    renderPlayerList();
+  });
 
-    attachRoomListeners();
-    startNetLoop();
-  } catch(e) {
-    console.error('createRoom error', e);
-    setLobbyStatus('❌ ผิดพลาด: ' + (e.message || e), '#ff8888');
-    MP.connected = false;
-  }
+  if (!MP.peer) return;
+
+  // Host receives connections
+  MP.peer.on('connection', (conn) => {
+    if (MP.hostConn && MP.hostConn.open) {
+      // Already have a client — reject second
+      try { conn.close(); } catch(e){}
+      return;
+    }
+    MP.hostConn = conn;
+    setupHostConnection(conn);
+  });
 }
 
-async function joinRoom() {
+function setupHostConnection(conn) {
+  conn.on('open', () => {
+    setLobbyStatus('✅ เพื่อนเชื่อมต่อแล้ว!', '#88ff88');
+    sfx.join();
+    // Send initial state
+    conn.send({
+      type: 'welcome',
+      wave: state.wave,
+      zombies: state.zombies.filter(z => !z.dead).map(z => ({
+        id: z.__netId || (z.__netId = 'z_' + Math.random().toString(36).substr(2, 6)),
+        type: z.type,
+        x: z.group.position.x,
+        z: z.group.position.z,
+        hp: z.hp, maxHp: z.maxHp
+      }))
+    });
+  });
+  conn.on('data', (data) => {
+    if (!data || !data.type) return;
+    if (data.type === 'hello') {
+      renderPlayerList();
+      addKillFeed(data.name + ' เข้าร่วม', 'me');
+    } else if (data.type === 'pos') {
+      MP.remotePlayers[data.id] = data;
+      updateRemoteAvatar(data);
+    } else if (data.type === 'shot') {
+      spawnRemoteShot(data.from, data.to);
+    }
+  });
+  conn.on('close', () => {
+    setLobbyStatus('⚠️ เพื่อนออกจากห้อง', '#ff8888');
+    MP.hostConn = null;
+  });
+  conn.on('error', (e) => console.error('Host conn error', e));
+}
+
+function joinRoom() {
   const nameInput = document.getElementById('playerName');
   const name = (nameInput.value || '').trim() || 'PLAYER';
   player.name = name;
-  try { localStorage.setItem('zs_name', name); } catch(e) {}
+  try { localStorage.setItem('zs_name', name); } catch(e){}
 
   const codeInput = document.getElementById('roomInput');
   const code = (codeInput.value || '').trim().toUpperCase();
   if (code.length !== 6) { setLobbyStatus('❌ รหัสต้อง 6 ตัวอักษร', '#ff8888'); return; }
 
-  if (!initFirebase()) {
-    setLobbyStatus('❌ Firebase ไม่พร้อม', '#ff8888');
-    return;
-  }
-  setLobbyStatus('⏳ กำลังเข้าห้อง...', '#ffcc88');
+  MP.roomCode = code;
+  MP.isHost = false;
+  MP.peerIdWanted = 'zombie-client-' + Math.random().toString(36).substr(2, 8);
 
-  try {
-    const snap = await MP.db.ref('rooms/' + code).once('value');
-    if (!snap.exists()) { setLobbyStatus('❌ ไม่พบห้อง ' + code, '#ff8888'); return; }
+  setLobbyStatus('⏳ กำลังเข้าห้อง ' + code + '...', '#ffcc88');
+  updateMpTag('connecting');
 
-    MP.roomCode = code;
-    MP.isHost = (snap.val().hostId === player.id);
-    MP.roomRef = MP.db.ref('rooms/' + code);
-    MP.myRef = MP.roomRef.child('players/' + player.id);
+  if (MP.peer) { try { MP.peer.destroy(); } catch(e){} MP.peer = null; }
 
-    await MP.myRef.set({
-      name: player.name,
-      x: 0, z: 0, yaw: 0, hp: 100,
-      weapon: 'pistol',
-      score: 0,
-      joinedAt: firebase.database.ServerValue.TIMESTAMP,
-      lastSeen: firebase.database.ServerValue.TIMESTAMP
+  MP.peer = createPeer(MP.peerIdWanted, (id) => {
+    setLobbyStatus('⏳ กำลังเชื่อมต่อไปที่ host...', '#ffcc88');
+    const conn = MP.peer.connect('zombie-3d-' + code, { reliable: true });
+    MP.conn = conn;
+
+    conn.on('open', () => {
+      MP.connected = true;
+      updateMpTag('connected');
+      setLobbyStatus('✅ เข้าห้องสำเร็จ! รอ host เริ่มเกม', '#88ff88');
+      conn.send({ type: 'hello', name: player.name, id: player.id });
+      const codeBox = document.getElementById('roomCodeBox');
+      codeBox.textContent = code;
+      codeBox.style.display = 'block';
+      renderPlayerList();
     });
-    await MP.myRef.onDisconnect().remove();
+    conn.on('data', (data) => {
+      if (!data || !data.type) return;
+      if (data.type === 'welcome') {
+        state.wave = data.wave || 1;
+      } else if (data.type === 'wave') {
+        state.wave = data.wave;
+      } else if (data.type === 'pos') {
+        MP.remotePlayers[data.id] = data;
+        updateRemoteAvatar(data);
+      } else if (data.type === 'shot') {
+        spawnRemoteShot(data.from, data.to);
+      } else if (data.type === 'zombie_spawn') {
+        // Spawn remote zombie
+        createZombie(data.x, data.z, data.ztype);
+      }
+    });
+    conn.on('error', (e) => {
+      console.error('Client conn error', e);
+      setLobbyStatus('❌ เชื่อมต่อไม่ได้ — ตรวจสอบรหัส', '#ff8888');
+      updateMpTag('error');
+    });
+    conn.on('close', () => {
+      setLobbyStatus('⚠️ การเชื่อมต่อขาด', '#ff8888');
+      MP.connected = false;
+      updateMpTag('error');
+    });
+  });
 
-    MP.connected = true;
-    state.mode = 'mp';
-    updateMpTag('connected');
-
-    const codeBox = document.getElementById('roomCodeBox');
-    codeBox.textContent = code;
-    codeBox.style.display = 'block';
-    setLobbyStatus('✅ เข้าห้องสำเร็จ!', '#88ff88');
-
-    attachRoomListeners();
-    startNetLoop();
-  } catch(e) {
-    console.error('joinRoom error', e);
-    setLobbyStatus('❌ ผิดพลาด: ' + (e.message || e), '#ff8888');
-    MP.connected = false;
-  }
+  if (!MP.peer) return;
 }
 
-function attachRoomListeners() {
-  // Listen to players
-  const playersRef = MP.roomRef.child('players');
-  const cbPlayers = playersRef.on('value', snap => {
-    const data = snap.val() || {};
-    MP.players = data;
-    renderPlayerList();
-    syncRemoteAvatars(data);
-    // Enable start button if host
-    const startBtn = document.getElementById('startMpBtn');
-    if (startBtn) {
-      startBtn.disabled = !MP.isHost;
-      startBtn.style.opacity = MP.isHost ? '1' : '0.4';
-    }
-  });
-  MP.listeners.push(() => playersRef.off('value', cbPlayers));
-
-  // Listen to wave start signal
-  const waveRef = MP.roomRef.child('startWave');
-  const cbWave = waveRef.on('value', snap => {
-    const w = snap.val();
-    if (w && w.startedBy !== player.id && !state.running) {
-      // Someone started the game
-      startMpGame();
-    }
-  });
-  MP.listeners.push(() => waveRef.off('value', cbWave));
+function leaveRoom() {
+  if (MP.peer) { try { MP.peer.destroy(); } catch(e){} MP.peer = null; }
+  if (MP.conn) { try { MP.conn.close(); } catch(e){} MP.conn = null; }
+  if (MP.hostConn) { try { MP.hostConn.close(); } catch(e){} MP.hostConn = null; }
+  MP.connected = false;
+  MP.roomCode = null;
+  MP.isHost = false;
+  MP.myPeerId = null;
+  MP.remotePlayers = {};
+  // Remove all remote avatars
+  for (const id in MP._meshes || {}) {
+    scene.remove(MP._meshes[id]);
+  }
+  MP._meshes = {};
+  state.mode = 'solo';
+  updateMpTag('solo');
+  const codeBox = document.getElementById('roomCodeBox');
+  if (codeBox) codeBox.style.display = 'none';
 }
 
 function renderPlayerList() {
   const list = document.getElementById('playerList');
   if (!list) return;
   list.innerHTML = '';
-  const ids = Object.keys(MP.players);
-  for (const id of ids) {
-    const p = MP.players[id];
+  // Self
+  const selfEl = document.createElement('div');
+  selfEl.className = 'plItem self';
+  selfEl.innerHTML = `<span>${escapeHtml(player.name)}<span class="you">YOU</span></span><span class="hp">❤️ ${Math.round(player.health)}</span>`;
+  list.appendChild(selfEl);
+  // Remotes
+  for (const id in MP.remotePlayers) {
+    const p = MP.remotePlayers[id];
     const el = document.createElement('div');
-    el.className = 'plItem' + (id === player.id ? ' self' : '');
-    el.innerHTML = `<span>${escapeHtml(p.name || 'PLAYER')}${id === player.id ? '<span class="you">YOU</span>' : ''}</span>
-      <span class="hp">❤️ ${Math.round(p.hp || 0)}</span>`;
+    el.className = 'plItem';
+    el.innerHTML = `<span>${escapeHtml(p.name || 'PLAYER')}</span><span class="hp">❤️ ${Math.round(p.hp || 0)}</span>`;
     list.appendChild(el);
   }
   const info = document.getElementById('lobbyInfo');
-  if (info) info.textContent = ids.length + ' คนในห้อง';
+  if (info) info.textContent = (Object.keys(MP.remotePlayers).length + 1) + ' คนในห้อง';
 }
 
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-function syncRemoteAvatars(data) {
-  const presentIds = new Set();
-  for (const id in data) {
-    if (id === player.id) continue;
-    presentIds.add(id);
-    const p = data[id];
-    if (!MP.remoteMeshes[id]) {
-      // Create avatar mesh
-      const g = new THREE.Group();
-      // Simple body: head + torso (player-like)
-      const skin = new THREE.MeshStandardMaterial({ color: 0x6fa8dc, roughness: 0.7 });
-      const cloth = new THREE.MeshStandardMaterial({ color: 0x2a3a5a, roughness: 0.9 });
-      const head = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.36, 0.32), skin);
-      head.position.y = 1.75; head.castShadow = !IS_MOBILE;
-      g.add(head);
-      const torso = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.85, 0.32), cloth);
-      torso.position.y = 1.13; torso.castShadow = !IS_MOBILE;
-      g.add(torso);
-      const armL = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.16, 0.72), skin);
-      armL.position.set(-0.36, 1.35, 0.35); g.add(armL);
-      const armR = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.16, 0.72), skin);
-      armR.position.set(0.36, 1.35, 0.35); g.add(armR);
-      const legL = new THREE.Mesh(new THREE.BoxGeometry(0.20, 0.80, 0.20), cloth);
-      legL.position.set(-0.15, 0.40, 0); g.add(legL);
-      const legR = new THREE.Mesh(new THREE.BoxGeometry(0.20, 0.80, 0.20), cloth);
-      legR.position.set(0.15, 0.40, 0); g.add(legR);
-      // Name tag
-      const canvas = document.createElement('canvas');
-      canvas.width = 256; canvas.height = 64;
-      const cx = canvas.getContext('2d');
-      cx.font = 'bold 32px Segoe UI, sans-serif';
-      cx.textAlign = 'center'; cx.textBaseline = 'middle';
-      cx.fillStyle = '#ffe4b8';
-      cx.strokeStyle = '#000'; cx.lineWidth = 6;
-      cx.strokeText(p.name || 'PLAYER', 128, 32);
-      cx.fillText(p.name || 'PLAYER', 128, 32);
-      const tex = new THREE.CanvasTexture(canvas);
-      const tag = new THREE.Sprite(new THREE.SpriteMaterial({
-        map: tex, transparent:true, depthWrite:false, depthTest:false }));
-      tag.scale.set(1.6, 0.4, 1);
-      tag.position.y = 2.3;
-      g.add(tag);
-      scene.add(g);
-      MP.remoteMeshes[id] = { group: g, tag };
-    }
-    const mesh = MP.remoteMeshes[id];
-    mesh.group.position.x = p.x || 0;
-    mesh.group.position.z = p.z || 0;
-    mesh.group.rotation.y = p.yaw || 0;
-    // Hide dead players
-    mesh.group.visible = (p.hp || 0) > 0;
+function updateRemoteAvatar(data) {
+  if (!MP._meshes) MP._meshes = {};
+  let mesh = MP._meshes[data.id];
+  if (!mesh) {
+    const g = new THREE.Group();
+    // Simple body
+    const skin = new THREE.MeshStandardMaterial({ color: 0x7ab8dc, roughness: 0.7 });
+    const cloth = new THREE.MeshStandardMaterial({ color: 0x2a4a6a, roughness: 0.9 });
+    const head = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.36, 0.32), skin);
+    head.position.y = 1.75; head.castShadow = !IS_MOBILE; g.add(head);
+    const torso = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.85, 0.32), cloth);
+    torso.position.y = 1.13; torso.castShadow = !IS_MOBILE; g.add(torso);
+    const armL = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.16, 0.72), skin);
+    armL.position.set(-0.36, 1.35, 0.35); g.add(armL);
+    const armR = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.16, 0.72), skin);
+    armR.position.set(0.36, 1.35, 0.35); g.add(armR);
+    const legL = new THREE.Mesh(new THREE.BoxGeometry(0.20, 0.80, 0.20), cloth);
+    legL.position.set(-0.15, 0.40, 0); g.add(legL);
+    const legR = new THREE.Mesh(new THREE.BoxGeometry(0.20, 0.80, 0.20), cloth);
+    legR.position.set(0.15, 0.40, 0); g.add(legR);
+    // Name tag
+    const canvas = document.createElement('canvas');
+    canvas.width = 256; canvas.height = 64;
+    const cx = canvas.getContext('2d');
+    cx.font = 'bold 32px Segoe UI, sans-serif';
+    cx.textAlign = 'center'; cx.textBaseline = 'middle';
+    cx.fillStyle = '#a8e0ff';
+    cx.strokeStyle = '#000'; cx.lineWidth = 6;
+    cx.strokeText(data.name || 'PLAYER', 128, 32);
+    cx.fillText(data.name || 'PLAYER', 128, 32);
+    const tex = new THREE.CanvasTexture(canvas);
+    const tag = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: tex, transparent:true, depthWrite:false, depthTest:false }));
+    tag.scale.set(1.6, 0.4, 1);
+    tag.position.y = 2.3;
+    g.add(tag);
+    scene.add(g);
+    MP._meshes[data.id] = g;
+    mesh = g;
   }
-  // Remove avatars for left players
-  for (const id in MP.remoteMeshes) {
-    if (!presentIds.has(id)) {
-      scene.remove(MP.remoteMeshes[id].group);
-      delete MP.remoteMeshes[id];
-    }
-  }
+  mesh.position.x = data.x || 0;
+  mesh.position.z = data.z || 0;
+  mesh.rotation.y = data.yaw || 0;
+  mesh.visible = (data.hp || 0) > 0;
 }
 
-let netIntervalId = null;
-function startNetLoop() {
-  if (netIntervalId) clearInterval(netIntervalId);
-  netIntervalId = setInterval(sendNetUpdate, 1000 / CFG.netRate);
-}
-function stopNetLoop() {
-  if (netIntervalId) { clearInterval(netIntervalId); netIntervalId = null; }
-}
-
-function sendNetUpdate() {
-  if (!MP.connected || !MP.myRef) return;
-  try {
-    MP.myRef.update({
-      name: player.name,
-      x: Math.round(player.pos.x * 100) / 100,
-      z: Math.round(player.pos.z * 100) / 100,
-      yaw: Math.round(player.yaw * 100) / 100,
-      hp: Math.round(player.health),
-      weapon: player.weapon,
-      score: state.score,
-      lastSeen: firebase.database.ServerValue.TIMESTAMP
-    }).catch(()=>{});
-  } catch(e) {}
-}
-
-function leaveRoom() {
-  stopNetLoop();
-  if (MP.connected) {
-    MP.listeners.forEach(fn => { try { fn(); } catch(e){} });
-    MP.listeners = [];
-    if (MP.myRef) MP.myRef.remove().catch(()=>{});
-    if (MP.isHost && MP.roomRef) {
-      // Cleanup room when host leaves
-      MP.roomRef.remove().catch(()=>{});
-    }
-    MP.connected = false;
-  }
-  // Remove remote avatars
-  for (const id in MP.remoteMeshes) {
-    scene.remove(MP.remoteMeshes[id].group);
-  }
-  MP.remoteMeshes = {};
-  MP.players = {};
-  MP.roomCode = null;
-  MP.isHost = false;
-  state.mode = 'solo';
-  updateMpTag('solo');
+function spawnRemoteShot(from, to) {
+  if (!from || !to) return;
+  const f = new THREE.Vector3(from.x, from.y, from.z);
+  const t = new THREE.Vector3(to.x, to.y, to.z);
+  const geo = new THREE.BufferGeometry().setFromPoints([f, t]);
+  const mat = new THREE.LineBasicMaterial({
+    color: 0x88ccff, transparent: true, opacity: 0.85,
+    blending: THREE.AdditiveBlending, depthWrite: false });
+  const line = new THREE.Line(geo, mat);
+  scene.add(line);
+  state.tracers.push({ line, life: 0.08, max: 0.08 });
 }
 
 MP.broadcastShot = function(from, to) {
-  if (!MP.connected || !MP.roomRef) return;
+  if (!MP.connected) return;
+  const msg = {
+    type: 'shot',
+    from: { x: from.x, y: from.y, z: from.z },
+    to: { x: to.x, y: to.y, z: to.z },
+    by: player.name
+  };
   try {
-    MP.roomRef.child('shots').push({
-      from: { x: from.x, y: from.y, z: from.z },
-      to: { x: to.x, y: to.y, z: to.z },
-      by: player.name,
-      t: firebase.database.ServerValue.TIMESTAMP
-    });
-    // Cleanup old shots
-    setTimeout(() => {
-      MP.roomRef.child('shots').limitToLast(50).once('value', snap => {
-        const shots = snap.val() || {};
-        const now = Date.now();
-        for (const k in shots) {
-          if (now - (shots[k].t || 0) > 3000) {
-            MP.roomRef.child('shots/' + k).remove().catch(()=>{});
-          }
-        }
-      }).catch(()=>{});
-    }, 3200);
+    if (MP.isHost && MP.hostConn && MP.hostConn.open) MP.hostConn.send(msg);
+    else if (!MP.isHost && MP.conn && MP.conn.open) MP.conn.send(msg);
   } catch(e) {}
 };
 
-MP.broadcastZombieKilled = function(netId, byName) {
-  if (!MP.connected || !MP.roomRef) return;
+function sendNetUpdate() {
+  if (!MP.connected) return;
+  const msg = {
+    type: 'pos',
+    id: player.id,
+    name: player.name,
+    x: Math.round(player.pos.x * 100) / 100,
+    z: Math.round(player.pos.z * 100) / 100,
+    yaw: Math.round(player.yaw * 100) / 100,
+    hp: Math.round(player.health)
+  };
   try {
-    MP.roomRef.child('killFeed').push({
-      text: byName + ' 🎯 ' + netId,
-      t: firebase.database.ServerValue.TIMESTAMP
-    });
+    if (MP.isHost && MP.hostConn && MP.hostConn.open) MP.hostConn.send(msg);
+    else if (!MP.isHost && MP.conn && MP.conn.open) MP.conn.send(msg);
   } catch(e) {}
-};
-
-// Listen for remote shots (visual tracers)
-function attachMpShotListener() {
-  if (!MP.connected || !MP.roomRef) return;
-  const shotsRef = MP.roomRef.child('shots');
-  shotsRef.limitToLast(1).on('child_added', snap => {
-    const s = snap.val();
-    if (!s || !s.from || !s.to) return;
-    // Ignore our own shots (already rendered locally)
-    if (s.by === player.name) return;
-    const from = new THREE.Vector3(s.from.x, s.from.y, s.from.z);
-    const to = new THREE.Vector3(s.to.x, s.to.y, s.to.z);
-    const geo = new THREE.BufferGeometry().setFromPoints([from, to]);
-    const mat = new THREE.LineBasicMaterial({
-      color: 0x88ccff, transparent: true, opacity: 0.85,
-      blending: THREE.AdditiveBlending, depthWrite: false });
-    const line = new THREE.Line(geo, mat);
-    scene.add(line);
-    state.tracers.push({ line, life: 0.08, max: 0.08 });
-  });
 }
 
 // ============================================================
-//  HUD + PERKS + WEATHER + WAVES
+//  HUD
 // ============================================================
 const ui = {};
 function refreshUI() {
@@ -3058,6 +2956,7 @@ function updateKillcam(dt) {
   }
 }
 
+// ---------- WEATHER ----------
 function setWeather(type) {
   state.weather = type;
   const stormOv = document.getElementById('stormOverlay');
@@ -3074,7 +2973,6 @@ function setWeather(type) {
     if (rainPoints) rainPoints.visible = false;
     if (stormOv) stormOv.style.opacity = '0';
   }
-  if (type === 'storm' || type === 'rain') sfx.thunder();
 }
 function updateWeather(dt) {
   state.weatherTimer -= dt;
@@ -3172,6 +3070,7 @@ function updateDayNight(dt) {
   }
 }
 
+// ---------- WAVES ----------
 function isBossWave(w) { return w % 5 === 0 && w > 0; }
 function startWave(n) {
   state.wave = n;
@@ -3192,6 +3091,10 @@ function startWave(n) {
     showBanner('WAVE ' + n, '#ff9a5a');
   }
   updateHUD();
+  // Broadcast wave in MP
+  if (state.mode === 'mp' && MP.isHost && MP.hostConn && MP.hostConn.open) {
+    try { MP.hostConn.send({ type: 'wave', wave: n }); } catch(e) {}
+  }
 }
 function spawnZombie() {
   let x=0, z=0, ok=false, tries=0;
@@ -3383,9 +3286,7 @@ function checkAchievements() {
   }
 }
 
-// ============================================================
-//  INPUT
-// ============================================================
+// ---------- INPUT ----------
 function bindEvents() {
   window.addEventListener('resize', () => {
     camera.aspect = innerWidth/innerHeight;
@@ -3435,7 +3336,6 @@ function bindEvents() {
     });
   }
 
-  // Menu buttons
   document.getElementById('soloBtn').addEventListener('click', () => {
     state.mode = 'solo';
     updateMpTag('solo');
@@ -3444,7 +3344,6 @@ function bindEvents() {
   document.getElementById('mpBtn').addEventListener('click', () => {
     document.getElementById('startScreen').classList.add('hidden');
     document.getElementById('lobbyScreen').classList.remove('hidden');
-    // Load saved name
     try {
       const savedName = localStorage.getItem('zs_name') || '';
       if (savedName) document.getElementById('playerName').value = savedName;
@@ -3462,7 +3361,6 @@ function bindEvents() {
     startMpGame();
   });
 
-  document.getElementById('startBtn').addEventListener('click', startGame);
   document.getElementById('resumeBtn').addEventListener('click', resumeGame);
   document.getElementById('quitBtn').addEventListener('click', () => {
     state.paused = false;
@@ -3477,7 +3375,6 @@ function bindEvents() {
     document.getElementById('gameOverScreen').classList.add('hidden');
     resetGame();
     if (state.mode === 'mp' && MP.connected) {
-      // Return to lobby
       document.getElementById('startScreen').classList.remove('hidden');
       document.getElementById('lobbyScreen').classList.remove('hidden');
       state.running = false;
@@ -3503,16 +3400,9 @@ function resumeGame() {
   if (!IS_MOBILE) { const pp = renderer.domElement.requestPointerLock(); if (pp && pp.catch) pp.catch(()=>{}); }
   resumeAudio();
 }
-
 function startMpGame() {
-  // Host triggers game start for everyone
-  if (MP.connected && MP.roomRef) {
-    MP.roomRef.child('startWave').set({
-      startedBy: player.id,
-      wave: 1,
-      t: firebase.database.ServerValue.TIMESTAMP
-    }).catch(()=>{});
-    attachMpShotListener();
+  if (MP.isHost && MP.hostConn && MP.hostConn.open) {
+    try { MP.hostConn.send({ type: 'wave', wave: 1 }); } catch(e) {}
   }
   document.getElementById('lobbyScreen').classList.add('hidden');
   startGame();
@@ -3729,9 +3619,8 @@ function resetGame() {
   updateHUD();
 }
 
-// ============================================================
-//  MAIN LOOP
-// ============================================================
+// ---------- MAIN LOOP ----------
+let lastNetSend = 0;
 function animate() {
   requestAnimationFrame(animate);
   const rawDt = Math.min(clock.getDelta(), 0.05);
@@ -3751,6 +3640,15 @@ function animate() {
     updateHUDStamina();
     updateBloodScreen(rawDt);
     updateScreenFlash(rawDt);
+
+    // Network send at 20 Hz
+    if (state.mode === 'mp' && MP.connected) {
+      lastNetSend += rawDt;
+      if (lastNetSend >= 1/CFG.netRate) {
+        lastNetSend = 0;
+        sendNetUpdate();
+      }
+    }
 
     if (hitMarkerTimer > 0) {
       hitMarkerTimer -= rawDt;
@@ -3779,12 +3677,9 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// ============================================================
-//  BOOTSTRAP
-// ============================================================
+// ---------- BOOTSTRAP ----------
 refreshUI();
 init();
-animate();
 </script>
 </body>
 </html>
